@@ -1,0 +1,15 @@
+<div>
+    <h1>Liste des personnages </h1>
+    <ul *ngFor="let personnage of tabPersonnages index as i">
+        <li>
+            <div>
+                <img src="{{personnage.Image}}" height="50px" />
+                Nom : {{personnage.nom}}
+                <input type="checkbox" [checked]="checkMajeur(personnage.majeur)" readonly>
+                Nombre d'abonnés : {{personnage.nb}}
+                <button (click)="follow(personnage.nb,i)">S'abonner</button>
+
+            </div>
+        </li>
+    </ul>
+</div>
